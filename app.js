@@ -77,14 +77,13 @@ goTop.addEventListener('click', () => {
 
     document.documentElement.scrollTop = 0;
 });
+//  let bottom = document.querySelector('#seemore');
 
-let bottom = document.querySelector('#seemore');
+// bottom.addEventListener('click', () => {
 
-bottom.addEventListener('click', () => {
+//     document.documentElement.scrollTop = 200;
 
-    document.documentElement.scrollTop = 2000;
-
-});
+// });
 
 
 

@@ -275,6 +275,15 @@ button:hover {
     color: var(--green);
 }
 
+.cover #seemore a{
+    text-decoration: none; 
+    color: var(--white);
+}
+.cover #seemore a:hover{
+    text-decoration: none; 
+    color: var(--green);
+}
+
 .cards .container__cards {
     position: relative;
     width: 100%;
