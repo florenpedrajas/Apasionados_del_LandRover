@@ -1,8 +1,7 @@
 :root {
-    --green: #058748;
+    --green: #024726;
     --black: #1f0709;
     --white: #f5f5f5;
-
 }
 
 * {
@@ -17,13 +16,12 @@ body {
     font-family: 'Raleway', sans-serif;
     overflow-x: hidden;
     transition: .3s ease all;
-
+    font-display: swap;
 }
 
 body.dark {
     background: #2b2a2a;
 }
-
 
 html {
     scroll-behavior: smooth;
@@ -64,6 +62,11 @@ html {
     border-color: transparent transparent #fff transparent;
 }
 
+body.dark .sideways__bottom {
+    border-color: #2b2a2a;
+    border-width: 0 0 0vh 100vw;
+}
+
 .sideways__top {
     position: absolute;
     top: 0;
@@ -77,15 +80,12 @@ html {
 #header {
     position: relative;
     width: 100%;
-
 }
 
 body.dark nav {
     background: #2b2a2a;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
 }
-
-
 
 .menu {
     position: fixed;
@@ -126,7 +126,6 @@ body.dark .menu .logo_box h1 {
     padding-right: 20px;
 }
 
-
 .menu .list__container .lists {
     display: flex;
     padding-bottom: 0px;
@@ -147,19 +146,20 @@ body.dark .menu .logo_box h1 {
     transition: 0.3s;
 }
 
-body.dark .menu .list__container .lists li a{
+body.dark .menu .list__container .lists li a {
     color: var(--white);
 }
 
 .menu .list__container .lists li a.active {
     background-color: var(--green);
+    color: var(--white);
 }
 
 .menu .list__container .lists li a:hover {
     background-color: var(--green);
 }
 
-.nignt__mode {
+#night__mode {
     width: 80px;
     margin: auto;
     margin-left: 60px;
@@ -173,7 +173,7 @@ body.dark .menu .list__container .lists li a{
     outline: none;
 }
 
-.nignt__mode::after {
+#night__mode::after {
     content: "";
     display: block;
     width: 40px;
@@ -188,17 +188,17 @@ body.dark .menu .list__container .lists li a{
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-.nignt__mode.active {
+#night__mode.active {
     background: orange;
     color: #000;
 }
 
-.nignt__mode.active::after {
+#night__mode.active::after {
     right: 0;
     left: unset;
 }
 
-.nignt__mode span {
+#night__mode span {
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -215,7 +215,7 @@ body.dark .menu .list__container .lists li a{
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url(./images/landroverLuis.jpg);
+    background-image: url(./images/landroverLuis.webp);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -275,92 +275,6 @@ button:hover {
     color: var(--green);
 }
 
-
-.history {
-    width: 100%;
-    margin-top: 50px;
-}
-
-.history .info__container {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-h2 {
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: var(--black);
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-body.dark h2 {
-    color: var(--white);
-}
-
-.history .info__container p {
-    font-size: 1.5rem;
-    color: var(--black);
-    text-align: left;
-    line-height: 30px;
-    margin: auto;
-    line-height: 1.8;
-}
-
-body.dark .history .info__container p {
-    color: var(--white);
-}
-
-.history .info__container .history__gallery {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 20px 0px;
-}
-
-.history .info__container .history__gallery img {
-    width: calc(33.33% - 10px);
-    object-fit: cover;
-    margin: auto;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.history .info__container .history__button {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.cards {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: url(./images/Land_Rover_en_la_Sierra_de_Madrid.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    margin-top: 100px;
-}
-
-.cards .deg__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6)
-}
-
-.cards .ejeZcards {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
 .cards .container__cards {
     position: relative;
     width: 100%;
@@ -376,14 +290,18 @@ body.dark .history .info__container p {
 
 .cards .container__cards h2 {
     font-size: 2.5rem;
-    color: var(--white);
+    color: var(--black);
     font-weight: normal;
     text-align: center;
     margin-bottom: 0;
 }
 
+body.dark .cards .container__cards h2 {
+    color: var(--white);
+}
+
 .cards .container__cards hr {
-    background: var(--white);
+    background: var(--black);
     width: 90%;
     margin: 0 5%
 }
@@ -481,10 +399,89 @@ body.dark .history .info__container p {
     transform: perspective(600px) rotateY(360deg);
 }
 
+.history {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(./images/Land_Rover_en_la_Sierra_de_Madrid.webp);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.history .deg__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6)
+}
+
+.history .ejeZcards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.history .info__container {
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--white);
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+body.dark h2 {
+    color: var(--white);
+}
+
+.history .info__container p {
+    font-size: 1.5rem;
+    color: var(--white);
+    text-align: left;
+    line-height: 30px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+body.dark .history .info__container p {
+    color: var(--white);
+}
+
+.history .info__container .history__gallery {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+.history .info__container .history__gallery img {
+    width: calc(33.33% - 10px);
+    object-fit: cover;
+    margin: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.history .info__container .history__button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .testimony {
     width: 100%;
     padding-top: 30px;
-
 }
 
 .testimony .testimony__title {
@@ -507,7 +504,6 @@ body.dark .testimony .testimony__title h2 {
 }
 
 .testimony .testimony__title hr {
-
     width: 90%;
     margin: 0% 5%;
     background: var(--black);
@@ -520,7 +516,6 @@ body.dark .testimony .testimony__title h2 {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-
     padding: 30px 0;
 }
 
@@ -555,7 +550,12 @@ body.dark .testimony .testimony__title h2 {
     transition: 2s;
 }
 
-.testimony .container__testimony .cards__testimony .testimony__text h4 {
+body.dark .testimony .container__testimony .cards__testimony .testimony__text {
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.testimony .container__testimony .cards__testimony .testimony__text h3 {
     color: var(--green);
     font-weight: normal;
     font-size: 27px;
@@ -565,6 +565,10 @@ body.dark .testimony .testimony__title h2 {
 }
 
 body.dark .testimony .container__testimony .cards__testimony .testimony__text p {
+    color: var(--white);
+}
+
+body.dark .testimony .container__testimony .cards__testimony .testimony__text h3 {
     color: var(--white);
 }
 
@@ -580,7 +584,7 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
     border: 2px solid var(--black);
 }
 
-.testimony .container__testimony .cards__testimony .testimony__text:hover h4 {
+.testimony .container__testimony .cards__testimony .testimony__text:hover h3 {
     color: var(--black);
 }
 
@@ -588,7 +592,7 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url(./images/landRoverPlaya.png);
+    background-image: url(./images/landRoverPlaya.webp);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -610,15 +614,12 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
 .footer .container__footer {
     width: 100%;
     padding-top: 20px;
-
     padding-bottom: 100px;
 }
 
 .footer .container__footer .footer__title {
     padding: 15px 75px;
     text-align: center;
-
-
 }
 
 .footer .container__footer .footer__title h2 {
@@ -631,7 +632,6 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
 .footer .container__footer .footer__title hr {
     width: 100%;
     height: 2px;
-
     background: var(--white);
 }
 
@@ -655,6 +655,10 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
 
 }
 
+body.dark .footer .container__footer .container__form .form {
+    background: #2b2a2a;
+}
+
 .footer .container__footer .container__form .form label {
     font-size: 20px;
     text-align: left;
@@ -662,19 +666,29 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
     margin: 15px 0px 10px 0px;
 }
 
+body.dark .footer .container__footer .container__form .form label {
+    background: #2b2a2a;
+    color: var(--white);
+}
+
 .footer .container__footer .container__form .form input {
     width: 100%;
     background-color: none;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #706c6c;
     padding: 0.6em 0.3em;
     border: none;
     outline: none;
-    border-bottom: 1px solid var(--color);
+    border-bottom: 1px solid var(--white);
 }
 
-.footer .container__footer .container__form .data {
+body.dark .footer .container__footer .container__form .form input {
+    background: #2b2a2a;
+    color: var(--white);
+}
+
+.footer .container__footer .container__form .form label .data {
     width: 100%;
 }
 
@@ -688,6 +702,11 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
     font-size: 15px;
     color: var(--black);
     padding: 20px;
+}
+
+body.dark .footer .container__footer .container__form .form textarea {
+    background: #2b2a2a;
+    color: var(--white);
 }
 
 .footer .container__footer .container__form .file__form {
@@ -704,14 +723,18 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
 .footer .container__footer .container__form .form .send button {
     width: 90px;
     height: 30px;
-    font-size: 15px;
-
+    font-size: 20px;
+    background: #024726;
 }
 
 .footer .container__footer .container__form .form .messaje__form {
     font-size: 18px;
     padding-bottom: 20px;
     padding-top: 10px;
+}
+
+body.dark .footer .container__footer .container__form .messaje__form {
+    color: var(--white);
 }
 
 .footer .footer__text {
@@ -737,7 +760,6 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
 .container__contact {
     display: flex;
     gap: 1.5em;
-
 }
 
 .contact__link {
@@ -752,62 +774,43 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
     background-color: var(--white);
 }
 
-/* .contact__icon{
-    width: 23px;
-} */
 
 @media screen and (max-width:1439px) {
-
-
     .menu .logo_box h1 {
         width: 320px;
         margin: 0;
         font-size: 1.8rem;
-
     }
 
     .menu .list__container .lists {
-
         padding-left: 150px;
     }
 
-    .nignt__mode {
+    #night__mode {
         width: 60px;
         height: 30px;
         margin-bottom: 20px;
         margin-right: 30px;
-
     }
 
-    .nignt__mode::after {
-
+    #night__mode::after {
         width: 30px;
         height: 30px;
-
     }
 
-    .nignt__mode.active::after {
+    #night__mode.active::after {
         right: 0;
         left: unset;
     }
 
-    .nignt__mode span {
+    #night__mode span {
         width: 30px;
         height: 30px;
         line-height: 30px;
-
     }
-   
-    
-
-
-
 }
 
 @media screen and (max-width:1240px) {
-
-
-
     .menu .logo_box h1 {
         display: none;
     }
@@ -815,54 +818,45 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
     .menu .list__container .lists {
         padding-left: 100px;
     }
-    .menu .list__container .lists li a {   
+
+    .menu .list__container .lists li a {
         font-size: 22px;
         padding: 6px;
     }
+
     .footer .container__footer .footer__title {
         padding: 15px 50px;
-     
-    
-    
     }
-    .footer .footer__text {
 
+    .footer .footer__text {
         padding: 0 25%;
     }
-        
 }
 
 
 @media screen and (max-width: 900px) {
     .menu {
-      
         justify-content: space-between;
         align-items: center;
-        
     }
 
-    .nignt__mode {
-       
-       margin-top: 20px;
-       margin-right: 125px;
-    
+    #night__mode {
+        margin-top: 20px;
+        margin-right: 125px;
     }
+
     #open__closed {
         display: block;
         position: absolute;
-    
         right: 30px;
         font-size: 50px;
         height: 40px;
-        cursor: pointer; 
-
+        cursor: pointer;
     }
+
     .img__header .cover h2 {
         font-size: 40px;
-       
-    
     }
-    
 
     .menu .list__container {
         background-color: var(--green);
@@ -871,15 +865,12 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
         left: -100%;
         position: fixed;
         top: 0;
-
         bottom: 0;
         overflow-y: hidden;
         margin-top: 55px;
         margin-left: 60%;
         transition: 0.5s;
         border-radius: 10px;
-
-
     }
 
     .menu .list__container .lists {
@@ -890,26 +881,20 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
         align-items: center;
         flex-direction: column;
         border-top: solid var(--green);
-
     }
 
     .menu .list__container .lists li {
         width: 90%;
         margin: auto;
-
         border-bottom: 1px solid rgba(255, 255, 255, 0.6);
         text-align: center;
         float: none;
         padding-top: 15px;
-
     }
-
-   
 
     .menu .list__container .lists li a {
         font-size: 20px;
         color: #f5f5f5;
-
     }
 
     .menu .list__container .lists li a.active {
@@ -921,13 +906,6 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
         background: none;
         color: var(--black);
     }
-    .history .info__container p {
-        font-size: 1rem;
-    
-    }
-    .sideways__top {
-         border-width: 7vh 100vw 0 0;
-    }
 
     .gallery__cards {
         position: relative;
@@ -935,250 +913,232 @@ body.dark .testimony .container__testimony .cards__testimony .testimony__text p 
         height: 400px;
         margin: 10px;
     }
+
     .cards .container__gallery .gallery__cards .front h3 {
-       
         font-size: 30px;
-     
     }
+
     .cards .container__gallery .gallery__cards .back p {
         letter-spacing: 1px;
         font-size: 20px;
     }
-    .cards .container__gallery .gallery__cards .back  h3 {
+
+    .cards .container__gallery .gallery__cards .back h3 {
         font-size: 30px;
-       
     }
+
     .cards .container__gallery .gallery__cards .back .card__link a {
         font-size: 30px;
-        
-}
-.footer .container__footer .container__form {
-    
-    max-width: 600px;
-   
-}
-.footer .container__footer .container__form .form label {
-    font-size: 28px;
+    }
+
+    .history .info__container p {
+        font-size: 1rem;
+    }
+
+    .sideways__top {
+        border-width: 7vh 100vw 0 0;
+    }
+
+    .footer .container__footer .container__form {
+        max-width: 600px;
+    }
+
+    .footer .container__footer .container__form .form label {
+        font-size: 28px;
+    }
+
+    .footer .container__footer .container__form .form input {
+        font-size: 20px;
+    }
+
+    .footer .container__footer .container__form .data {
+        width: 100%;
+    }
+
+    .footer .container__footer .container__form .form textarea {
+        font-size: 20px;
+    }
+
+    .footer .container__footer .container__form .form .send button {
+        width: 100px;
+        height: 35px;
+        font-size: 25px;
+    }
+
+    .footer .container__footer .container__form .form .messaje__form {
+        font-size: 22px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
 }
 
-.footer .container__footer .container__form .form input {
-    font-size: 20px;
-   
-}
 
-.footer .container__footer .container__form .data {
-    width: 100%;
-}
-
-.footer .container__footer .container__form .form textarea {
-    font-size: 20px;
-    
-}
-
-
-
-.footer .container__footer .container__form .form .send button {
-    width: 100px;
-    height: 35px;
-    font-size: 25px;
-
-}
-
-.footer .container__footer .container__form .form .messaje__form {
-    font-size: 22px;
-    padding-bottom: 15px;
-    padding-top: 15px;
-}
 @media screen and (max-width: 750px) {
-    .menu .list__container {       
+    .menu .list__container {
         height: 35%;
     }
 
     .img__header .cover h2 {
         font-size: 30px;
-       
-    
     }
+
     .img__header .cover p {
         font-size: 25px;
     }
+
     .img__header {
         position: relative;
         width: 100%;
         height: 80vh;
-        background-image: url(./images/landroverLuisMovil.png);
-    
+        background-image: url(./images/landroverLuisMovil.webp);
     }
-    
-    .cards .container__cards .card__title {    
-        width: 100%;     
+
+    .cards .container__cards .card__title {
+        width: 100%;
     }
 
     .testimony .container__testimony .cards__testimony {
         position: relative;
         width: 500px;
         height: 450px;
-   
     }
-    
-    .testimony .container__testimony .cards__testimony .testimony__text h4 {
-              font-size: 33px;
-       
+
+    .testimony .container__testimony .cards__testimony .testimony__text h3 {
+        font-size: 33px;
     }
+
     .testimony .container__testimony .cards__testimony .testimony__text p {
         font-size: 20px;
     }
-    .footer .footer__text {
 
+    .footer .footer__text {
         padding: 0 15%;
     }
-    
-
 }
+
 @media screen and (max-width: 550px) {
-    
-  
     .img__header .cover h2 {
         font-size: 23px;
-       
-    
     }
+
     .img__header .cover p {
         font-size: 18px;
     }
+
     .gallery__cards {
-       
         width: 450px;
         height: 400px;
-       
     }
+
     .cards .container__gallery .gallery__cards .front h3 {
-       
         font-size: 25px;
-     
     }
+
     .cards .container__gallery .gallery__cards .back p {
         letter-spacing: 1px;
         font-size: 15px;
     }
-    .cards .container__gallery .gallery__cards .back  h3 {
+
+    .cards .container__gallery .gallery__cards .back h3 {
         font-size: 25px;
-       
     }
+
     .cards .container__gallery .gallery__cards .back .card__link a {
         font-size: 25px;
-}
+    }
 
-.testimony .container__testimony .cards__testimony {
- 
-    width: 500px;
-    height: 520px;
+    .testimony .container__testimony .cards__testimony {
+        width: 500px;
+        height: 520px;
+    }
 
-}
+    .testimony .container__testimony .cards__testimony .testimony__text h3 {
+        font-size: 25px;
+    }
 
-.testimony .container__testimony .cards__testimony .testimony__text h4 {
-          font-size: 25px;
-   
-}
-.testimony .container__testimony .cards__testimony .testimony__text p {
-    font-size: 15px;
+    .testimony .container__testimony .cards__testimony .testimony__text p {
+        font-size: 15px;
+    }
 
-}
-.footer .container__footer .container__form .form {
-    display: flex;
-    justify-content: left;
-    flex-direction: column;
-    padding: 1em 2em;
+    .footer .container__footer .container__form .form {
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+        padding: 1em 2em;
+    }
 
-}
+    .footer .container__footer .container__form .form label {
+        font-size: 20px;
+    }
 
+    .footer .container__footer .container__form .form input {
+        font-size: 16px;
+    }
 
-.footer .container__footer .container__form .form label {
-    font-size: 20px;
-}
+    .footer .container__footer .container__form .data {
+        width: 100%;
+    }
 
-.footer .container__footer .container__form .form input {
-    font-size: 16px;
-   
-}
+    .footer .container__footer .container__form .form textarea {
+        font-size: 16px;
+    }
 
-.footer .container__footer .container__form .data {
-    width: 100%;
-}
+    .footer .container__footer .container__form .form .send button {
+        width: 80px;
+        font-size: 20px;
+    }
 
-.footer .container__footer .container__form .form textarea {
-    font-size: 16px;
-    
-}
+    .footer .container__footer .container__form .form .messaje__form {
+        font-size: 16px;
+    }
 
-.footer .container__footer .container__form .form .send button {
-    width: 80px;   
-    font-size: 20px;
-}
+    .footer .footer__text {
+        padding: 0 10%;
+    }
 
-.footer .container__footer .container__form .form .messaje__form {
-   
-    font-size: 16px;
-    
-}
-.footer .footer__text {
-
-    padding: 0 10%;
-}
-.footer .footer__text p {
-    font-size: 16px;
-   
-}
+    .footer .footer__text p {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 400px) {
+    .menu .list__container {
+        height: 28%;
+    }
 
-.menu .list__container {       
-    height: 28%;
-}
-.menu .list__container .lists li a {
-    font-size: 15px;
-    color: #f5f5f5;
+    .menu .list__container .lists li a {
+        font-size: 15px;
+        color: #f5f5f5;
+    }
 
-}
+    .img__header .cover h2 {
+        font-size: 20px;
+    }
 
+    .img__header .cover p {
+        font-size: 15px;
+    }
 
+    .gallery__cards {
+        width: 330px;
+        height: 400px;
+    }
 
-.img__header .cover h2 {
-    font-size: 20px;
-   
+    .cards .container__gallery .gallery__cards .front h3 {
+        font-size: 20px;
+    }
 
-}
-.img__header .cover p {
-    font-size: 15px;
-}
-.gallery__cards {
-   
-    width: 330px;
-    height: 400px;
-   
-}
-.cards .container__gallery .gallery__cards .front h3 {
-   
-    font-size: 20px;
- 
-}
+    .cards .container__gallery .gallery__cards .back h3 {
+        font-size: 20px;
+    }
 
-.cards .container__gallery .gallery__cards .back  h3 {
-    font-size: 20px;
-   
-}
-.cards .container__gallery .gallery__cards .back .card__link a {
-    font-size: 20px;
-}
+    .cards .container__gallery .gallery__cards .back .card__link a {
+        font-size: 20px;
+    }
 
-.testimony .container__testimony .cards__testimony {
+    .testimony .container__testimony .cards__testimony {
+        width: 500px;
+        height: 550px;
+    }
 
-width: 500px;
-height: 550px;
-
-}
-
-
-}
 }
