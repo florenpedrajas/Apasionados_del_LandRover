@@ -82,7 +82,7 @@ let bottom = document.querySelector('#seemore');
 
 bottom.addEventListener('click', () => {
 
-    document.documentElement.scrollTop = 500;
+    document.documentElement.scrollTop = 2250;
 
 });
 
